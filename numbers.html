@@ -3,45 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Numbers - SmartTrace</title>
-
+<title>Numbers</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-<header>
-
-<h1>Numbers</h1>
-
-<div class="menu">☰</div>
-
-</header>
-
 <div class="lesson-box">
 
-<h2>Number Tracing</h2>
+<h2>Number Practice</h2>
 
-<h1 class="number">1</h1>
-
-<p>Trace the number using your stylus.</p>
+<h1 id="number">1</h1>
 
 <canvas id="traceBoard"></canvas>
 
 <div class="buttons">
 
-<button>Previous</button>
+<button onclick="previousNumber()">Previous</button>
 
-<button>Clear</button>
+<button onclick="clearBoard()">Clear</button>
 
-<button>Next</button>
-
-</div>
+<button onclick="nextNumber()">Next</button>
 
 </div>
 
-<script src="script.js"></script>
+</div>
+
+<script>
+
+let currentNumber = 1;
+
+function updateNumber(){
+document.getElementById("number").innerHTML=currentNumber;
+}
+
+function nextNumber(){
+
+if(currentNumber<10){
+currentNumber++;
+updateNumber();
+}
+
+}
+
+function previousNumber(){
+
+if(currentNumber>1){
+currentNumber--;
+updateNumber();
+}
+
+}
+
+function clearBoard(){
+
+alert("Tracing board cleared.");
+
+}
+
+</script>
 
 </body>
-  </html>
+</html>

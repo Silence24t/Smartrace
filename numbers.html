@@ -32,35 +32,94 @@
 <script>
 
 let currentNumber = 1;
+let currentNumber = 1;
+const maxNumber = 1000;
 
 function updateNumber(){
-document.getElementById("number").innerHTML=currentNumber;
+    document.getElementById("number").innerHTML = currentNumber;
+
+    localStorage.setItem("currentNumber", currentNumber);
 }
 
 function nextNumber(){
 
-if(currentNumber<10){
-currentNumber++;
-updateNumber();
-}
+    if(currentNumber < maxNumber){
+
+        currentNumber++;
+
+        updateNumber();
+
+    }
 
 }
 
 function previousNumber(){
 
-if(currentNumber>1){
-currentNumber--;
-updateNumber();
-}
+    if(currentNumber > 1){
+
+        currentNumber--;
+
+        updateNumber();
+
+    }
 
 }
 
 function clearBoard(){
 
-alert("Tracing board cleared.");
+    const canvas = document.getElementById("traceBoard");
+
+    const ctx = canvas.getContext("2d");
+
+    ctx.clearRect(0,0,canvas.width,canvas.height);
 
 }
 
+window.onload = function(){
+
+    const saved = localStorage.getItem("currentNumber");
+
+    if(saved){
+
+        currentNumber = parseInt(saved);
+
+    }
+
+    updateNumber();
+
+}
+  const canvas = document.getElementById("traceBoard");
+const ctx = canvas.getContext("2d");
+
+canvas.width = 350;
+canvas.height = 350;
+
+let drawing = false;
+
+canvas.addEventListener("pointerdown", function(e){
+    drawing = true;
+    ctx.beginPath();
+    ctx.moveTo(e.offsetX, e.offsetY);
+});
+
+canvas.addEventListener("pointermove", function(e){
+    if(!drawing) return;
+
+    ctx.lineWidth = 5;
+    ctx.lineCap = "round";
+    ctx.strokeStyle = "blue";
+
+    ctx.lineTo(e.offsetX, e.offsetY);
+    ctx.stroke();
+});
+
+canvas.addEventListener("pointerup", function(){
+    drawing = false;
+});
+
+canvas.addEventListener("pointerleave", function(){
+    drawing = false;
+});
 </script>
 
 </body>

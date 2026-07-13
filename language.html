@@ -3,12 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Select Language - SmartTrace</title>
-
+<title>Select Language</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
 
 <div class="form-box">
@@ -16,29 +13,29 @@
 <h2>Select Your Language</h2>
 
 <select id="language">
-
-<option value="">Choose Language</option>
-
-<option value="en">English</option>
-<option value="fr">French</option>
-<option value="es">Spanish</option>
-<option value="ar">Arabic</option>
-<option value="zh">Chinese</option>
-<option value="pt">Portuguese</option>
-<option value="sw">Swahili</option>
-<option value="yo">Yoruba</option>
-<option value="ig">Igbo</option>
-<option value="ha">Hausa</option>
-
+    <option>English</option>
+    <option>French</option>
+    <option>Spanish</option>
+    <option>Arabic</option>
+    <option>Chinese</option>
+    <option>German</option>
+    <option>Portuguese</option>
 </select>
 
-<button onclick="location.href='theme.html'">
+<br><br>
 
-Continue
-
-</button>
+<button onclick="nextPage()">Continue</button>
 
 </div>
+
+<script>
+function nextPage(){
+    localStorage.setItem("language",
+    document.getElementById("language").value);
+
+    window.location.href="country.html";
+}
+</script>
 
 </body>
 </html>

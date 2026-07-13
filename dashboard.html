@@ -15,57 +15,77 @@
 
 <h1>SmartTrace</h1>
 
-<div class="menu">
-
+<div class="menu" onclick="toggleMenu()">
 ☰
-
 </div>
 
 </header>
 
+<div id="sideMenu" class="side-menu">
+
+<a href="#">📊 Progress</a>
+
+<a href="#">⚙️ Settings</a>
+
+<a href="#">🌍 Language</a>
+
+<a href="#">🎨 Theme</a>
+
+<a href="#">❓ Help</a>
+
+<a href="#">ℹ️ About</a>
+
+<a href="index.html">🚪 Logout</a>
+
+</div>
+
 <div class="dashboard">
 
 <div class="card" onclick="location.href='numbers.html'">
-
-🔢
-
+<h2>🔢</h2>
 <h3>Numbers</h3>
-
-<p>Learn numbers from 1 - 1000</p>
-
+<p>Learn Numbers 1 - 1000</p>
 </div>
 
 <div class="card" onclick="location.href='alphabet.html'">
-
-🔤
-
+<h2>🔤</h2>
 <h3>Alphabet</h3>
-
 <p>Learn A - Z</p>
-
 </div>
 
 <div class="card" onclick="location.href='shapes.html'">
-
-🔺
-
+<h2>🔺</h2>
 <h3>Shapes</h3>
-
-<p>Trace different shapes</p>
-
+<p>Trace Different Shapes</p>
 </div>
 
 <div class="card" onclick="location.href='words.html'">
-
-📝
-
+<h2>📝</h2>
 <h3>Words</h3>
-
-<p>Learn simple words</p>
-
+<p>Learn Simple Words</p>
 </div>
 
 </div>
+
+<script>
+
+function toggleMenu(){
+
+let menu=document.getElementById("sideMenu");
+
+if(menu.style.display=="block"){
+
+menu.style.display="none";
+
+}else{
+
+menu.style.display="block";
+
+}
+
+}
+
+</script>
 
 </body>
 </html>

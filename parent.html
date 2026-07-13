@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Parent Account - SmartTrace</title>
+<title>Parent Account</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -13,21 +13,49 @@
 
 <div class="form-box">
 
-<h2>Parent Account</h2>
+<h2>Create Parent Account</h2>
 
-<input type="text" placeholder="Parent's Name">
+<input
+type="email"
+id="parentEmail"
+placeholder="Parent's Gmail">
 
-<input type="email" placeholder="Parent's Gmail">
+<input
+type="password"
+id="parentPassword"
+placeholder="Create Password">
 
-<input type="password" placeholder="Create Password">
-
-<button onclick="location.href='country.html'">
+<button onclick="nextPage()">
 
 Continue
 
 </button>
 
 </div>
+
+<script>
+
+function nextPage(){
+
+const email =
+document.getElementById("parentEmail").value;
+
+const password =
+document.getElementById("parentPassword").value;
+
+if(email==="" || password===""){
+alert("Please complete all fields.");
+return;
+}
+
+localStorage.setItem("parentEmail", email);
+localStorage.setItem("parentPassword", password);
+
+window.location.href="theme.html";
+
+}
+
+</script>
 
 </body>
 </html>

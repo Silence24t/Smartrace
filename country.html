@@ -3,12 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Select Country - SmartTrace</title>
-
+<title>Select Country</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
 
 <div class="form-box">
@@ -16,29 +13,32 @@
 <h2>Select Your Country</h2>
 
 <select id="country">
-
-<option value="">Choose Country</option>
-
-<option>Nigeria</option>
-<option>Ghana</option>
-<option>South Africa</option>
-<option>United States</option>
-<option>United Kingdom</option>
-<option>Canada</option>
-<option>India</option>
-<option>China</option>
-<option>France</option>
-<option>Germany</option>
-
+    <option>Nigeria</option>
+    <option>Ghana</option>
+    <option>South Africa</option>
+    <option>United States</option>
+    <option>United Kingdom</option>
+    <option>Canada</option>
+    <option>India</option>
+    <option>China</option>
+    <option>France</option>
+    <option>Germany</option>
 </select>
 
-<button onclick="location.href='language.html'">
+<br><br>
 
-Continue
-
-</button>
+<button onclick="nextPage()">Continue</button>
 
 </div>
+
+<script>
+function nextPage(){
+    localStorage.setItem("country",
+    document.getElementById("country").value);
+
+    window.location.href="name.html";
+}
+</script>
 
 </body>
 </html>

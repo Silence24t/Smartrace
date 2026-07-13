@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Welcome - SmartTrace</title>
-
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - SmartTrace</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="menu">
-☰
-</div>
-
 <div class="welcome-box">
+    <h1>Welcome to SmartTrace</h1>
 
-<h1>Welcome to SmartTrace</h1>
+    <p>
+        Learn handwriting in a fun and interactive way using a stylus pen.
+    </p>
 
-<p>
-Learn handwriting in a fun and interactive way.
-</p>
-
-<button onclick="location.href='name.html'">
-Continue
-</button>
-
+    <button onclick="startApp()">
+        Continue
+    </button>
 </div>
+
+<script>
+function startApp(){
+    window.location.href="language.html";
+}
+</script>
 
 </body>
 </html>

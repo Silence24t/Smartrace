@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Words - SmartTrace</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Words</h1>
+
+<div class="menu">☰</div>
+
+</header>
+
+<div class="lesson-box">
+
+<h2>Word Tracing</h2>
+
+<h1 class="word">CAT</h1>
+
+<p>Trace the word using your stylus.</p>
+
+<canvas id="traceBoard"></canvas>
+
+<div class="buttons">
+
+<button>Previous</button>
+
+<button>Clear</button>
+
+<button>Next</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

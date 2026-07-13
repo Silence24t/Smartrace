@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Theme - SmartTrace</title>
+<title>Choose Theme</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -19,13 +19,13 @@
 
 <option value="">Select Theme</option>
 
-<option>Light Mode</option>
+<option value="light">Light Mode</option>
 
-<option>Dark Mode</option>
+<option value="dark">Dark Mode</option>
 
 </select>
 
-<button onclick="location.href='stylus.html'">
+<button onclick="nextPage()">
 
 Continue
 
@@ -33,5 +33,26 @@ Continue
 
 </div>
 
+<script>
+
+function nextPage(){
+
+const theme =
+document.getElementById("theme").value;
+
+if(theme===""){
+alert("Please select a theme.");
+return;
+}
+
+localStorage.setItem("theme", theme);
+
+window.location.href="stylus.html";
+
+}
+
+</script>
+
 </body>
+
 </html>
